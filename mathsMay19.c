@@ -7,6 +7,9 @@
 int check_vowel (char);
 int oneOff (char *s);
 int seqTest ();
+
+// https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
+
 /*
  * aim is to extract each digit from a numeric string and add one to each value 
  * this 
