@@ -35,17 +35,6 @@ main ()
 	{
 	  boolcount++;
 	  dig = true;
-
-	  /*
-	     printf ("manip %d \n", atoi (lineTwo) + 1);
-	     printf ("manip %d \n", atoi (lineTwo) - 1);
-
-	     printf ("=manip %d \n", atoi (str) + 11);
-	     printf ("=manip %d \n", atoi (str) - 11);
-	     printf ("=manip %d \n", atoi (str) + 9);
-	     printf ("=manip %d \n", atoi (str) - 9);
-	   */
-
 	}
       i++;
     }
