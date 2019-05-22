@@ -8,6 +8,7 @@
 int check_vowel (char);
 int oneOff (char *s);
 int seqTest ();
+int  buildSeq ();
 
 // https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
 
@@ -57,7 +58,7 @@ main ()
  * building this application done by script - buildme
  */
  
-  assert (17 == atoi (stest));
+  assert (16 == atoi (stest));
   assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
 	  && "process did not work");
 /* when core dumps occur look in /var/log/apport.log   on ubuntu 
@@ -70,6 +71,8 @@ Codename:	xenial
 //  printf ("\nboolcount = %d\n", boolcount);
 //  printf ("%s\n", dig ? "true" : "false");
   seqTest ();
+
+  buildSeq ();
 }
 
 int
