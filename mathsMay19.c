@@ -17,13 +17,17 @@ main ()
   int i = 0;
   bool dig = false;
   int boolcount = 0;
-  char stest[] = "1vvv";	// line one
+  char stest[] = "16vv";	// line one
+  char lineOne[] = "16qwerty";
   char lineTwo[] = "4zz";
+  char lineThree[] = "64e1tra";
   printf ("%d\n", atoi (stest));
   printf ("Enter a string to test for numeric values\n");
 //  gets(s);  // better use fgets
   char str[] = "16sAdx";
   printf ("%s\n", dig ? "true" : "false");
+  printf (">>  %d\n", atoi (str));	// seems to stop conversion at non-numeric char
+  printf (">>> %d\n", atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
   while (str[i])		// a sort of trick - looking at non-zero characters
     {
       putchar (toupper (str[i]));
@@ -31,8 +35,7 @@ main ()
 	{
 	  boolcount++;
 	  dig = true;
-	  printf (">> %d\n", atoi (str));	// seems to stop conversion at non-numeric char
-	  printf (">>> %d\n", atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
+
 	  /*
 	     printf ("manip %d \n", atoi (lineTwo) + 1);
 	     printf ("manip %d \n", atoi (lineTwo) - 1);
@@ -42,37 +45,52 @@ main ()
 	     printf ("=manip %d \n", atoi (str) + 9);
 	     printf ("=manip %d \n", atoi (str) - 9);
 	   */
-	  oneOff (str);
-	  oneOff ("64");
-	  oneOff ("16");
+
 	}
       i++;
     }
 
-/*  for (i = 0; str[i] != '\0'; i++)
-    {
-      if (check_vowel (toupper (str[i])) == 0)
-	{			//not a vowel
-	  t[j] = str[i];
-	  j++;
-	}
-    }
-*/
+  oneOff (lineOne);
+  oneOff (lineTwo);
+  oneOff (lineThree);
   printf ("\nboolcount = %d\n", boolcount);
   printf ("%s\n", dig ? "true" : "false");
 }
 
 int
 oneOff (char *s)
-{				//process numbers with two digits
-  printf ("=2manip %d \n", atoi (s) + 11);
-  printf ("=2manip %d \n", atoi (s) - 11);
-  printf ("=2manip %d \n", atoi (s) + 9);
-  printf ("=2manip %d \n", atoi (s) - 9);
+{
+  /*
+     int i = 0;
+     int boolcount = 0;
+     bool dig = false;
+     while (s[i])                 // a sort of trick - looking at non-zero characters
+     {
+     if (isdigit (s[i]) != 0)
+     {
+     boolcount++;
+     dig = true;
+
+     }
+     printf ("\n boolcount= %d\n", boolcount);
+     }
+   */
   //process numbers with one digit
   printf ("=1manip %d \n", atoi (s) + 1);
   printf ("=1manip %d \n", atoi (s) - 1);
   printf ("\n***\n");
+  //process numbers with two digits
+  printf ("=2manip %d \n", atoi (s) + 11);
+  printf ("=2manip %d \n", atoi (s) - 11);
+  printf ("=2manip %d \n", atoi (s) + 9);
+  printf ("=2manip %d \n", atoi (s) - 9);
+/*  //process numbers with three digits
+  printf ("=3manip %d \n", atoi (s) + 11);
+  printf ("=3manip %d \n", atoi (s) - 11);
+  printf ("=3manip %d \n", atoi (s) + 9);
+  printf ("=3manip %d \n", atoi (s) - 9);  
+*/
+
   return 3;
 }
 
