@@ -18,7 +18,7 @@ main ()
   int i = 0;
   bool dig = false;
   int boolcount = 0;
-  char stest[] = "16vv";	// line one
+  char stest[] = "15vv";	// line one
 
   char lineOne[] = "16qwerty";	// was 16
   char lineTwo[] = "4zz";	// was 4 
@@ -48,6 +48,12 @@ main ()
 
   assert (16 == atoi (stest));
   assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
+/* when core dumps occur look in /var/log/apport.log   on ubuntu 
+  Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+*/
 	  && "process did not work");
 //  printf ("\nboolcount = %d\n", boolcount);
 //  printf ("%s\n", dig ? "true" : "false");
