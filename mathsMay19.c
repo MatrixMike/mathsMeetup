@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>		//, one can use the more intuitive name bool
+#include <assert.h>
 int check_vowel (char);
 int oneOff (char *s);
 /*
@@ -19,8 +20,8 @@ main ()
   int boolcount = 0;
   char stest[] = "16vv";	// line one
 
-  char lineOne[] = "17qwerty";	// was 16
-  char lineTwo[] = "5zz";	// was 4 
+  char lineOne[] = "16qwerty";	// was 16
+  char lineTwo[] = "4zz";	// was 4 
   char lineThree[] = "64emtra";	// inserting a digit in the sea of non digits m1t test
   printf ("%d\n", atoi (stest));
   printf ("Enter a string to test for numeric values\n");
@@ -44,6 +45,10 @@ main ()
   oneOff (lineTwo);
   oneOff (lineThree);
   printf (">>> %d * %d = %d \n", atoi (lineOne), atoi (lineTwo), atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
+
+  assert (16 == atoi (stest));
+  assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
+	  && "process did not work");
 //  printf ("\nboolcount = %d\n", boolcount);
 //  printf ("%s\n", dig ? "true" : "false");
 }
