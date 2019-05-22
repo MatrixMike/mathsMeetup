@@ -6,6 +6,7 @@
 #include <assert.h>
 int check_vowel (char);
 int oneOff (char *s);
+int seqTest ();
 /*
  * aim is to extract each digit from a numeric string and add one to each value 
  * this 
@@ -48,15 +49,17 @@ main ()
 
   assert (16 == atoi (stest));
   assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
+	  && "process did not work");
 /* when core dumps occur look in /var/log/apport.log   on ubuntu 
   Distributor ID:	Ubuntu
 Description:	Ubuntu 16.04.6 LTS
 Release:	16.04
 Codename:	xenial
 */
-	  && "process did not work");
+
 //  printf ("\nboolcount = %d\n", boolcount);
 //  printf ("%s\n", dig ? "true" : "false");
+  seqTest ();
 }
 
 int
@@ -77,11 +80,15 @@ oneOff (char *s)
       i++;
       //     printf ("\n boolcount= %d\n", boolcount);
     }
-//  printf ("%s\n", dig ? "true" : "false");
+  printf ("%s\n", dig ? "true" : "false");
   printf ("\n boolcount= %d\n", boolcount);
   switch (boolcount)
     {
     case 3:
+      //process numbers with three digits
+//      printf ("=3manip %d \n", atoi (s) + 11);  
+      // -111,109,-91,89,89,91,109,111
+
     case 2:
       //process numbers with two digits
       printf ("=2manip %d \n", atoi (s) + 11);
@@ -143,3 +150,16 @@ check_vowel (char c)
     }
 }
 */
+
+
+int
+seqTest ()
+{
+  int seqA[8] = { -111, -109, -91, -89, 89, 91, 109, 111 };
+  int i;
+  for (i = 0; i < 8; i++)
+    {
+      printf ("\n    %d \n", seqA[i] + 123);
+    }
+  return 1;
+}
