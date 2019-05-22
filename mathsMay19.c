@@ -4,6 +4,11 @@
 #include <string.h>
 #include <stdbool.h>		//, one can use the more intuitive name bool
 int check_vowel (char);
+int oneOff (char *s);
+/*
+ * aim is to extract each digit from a numeric string and add one to each value 
+ * this 
+ */
 
 int
 main ()
@@ -28,8 +33,18 @@ main ()
 	  dig = true;
 	  printf (">> %d\n", atoi (str));	// seems to stop conversion at non-numeric char
 	  printf (">>> %d\n", atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
-	  printf ("manip %d \n", atoi (lineTwo) + 1);
-	  printf ("manip %d \n", atoi (lineTwo) - 1);
+	  /*
+	     printf ("manip %d \n", atoi (lineTwo) + 1);
+	     printf ("manip %d \n", atoi (lineTwo) - 1);
+
+	     printf ("=manip %d \n", atoi (str) + 11);
+	     printf ("=manip %d \n", atoi (str) - 11);
+	     printf ("=manip %d \n", atoi (str) + 9);
+	     printf ("=manip %d \n", atoi (str) - 9);
+	   */
+	  oneOff (str);
+	  oneOff ("64");
+	  oneOff ("16");
 	}
       i++;
     }
@@ -46,6 +61,21 @@ main ()
   printf ("\nboolcount = %d\n", boolcount);
   printf ("%s\n", dig ? "true" : "false");
 }
+
+int
+oneOff (char *s)
+{				//process numbers with two digits
+  printf ("=2manip %d \n", atoi (s) + 11);
+  printf ("=2manip %d \n", atoi (s) - 11);
+  printf ("=2manip %d \n", atoi (s) + 9);
+  printf ("=2manip %d \n", atoi (s) - 9);
+  //process numbers with one digit
+  printf ("=1manip %d \n", atoi (s) + 1);
+  printf ("=1manip %d \n", atoi (s) - 1);
+  printf ("\n***\n");
+  return 3;
+}
+
 
 int
 check_vowel (char c)
