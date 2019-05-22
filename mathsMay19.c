@@ -51,7 +51,13 @@ main ()
   oneOff (lineThree);
   printf (">>> %d * %d = %d \n", atoi (lineOne), atoi (lineTwo), atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
 
-  assert (16 == atoi (stest));
+/* the following link was useful for finding the crash dump
+ * https://stackoverflow.com/questions/2065912/core-dumped-but-core-file-is-not-in-the-current-directory
+ * crash forced by setting lhs of test
+ * building this application done by script - buildme
+ */
+ 
+  assert (17 == atoi (stest));
   assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
 	  && "process did not work");
 /* when core dumps occur look in /var/log/apport.log   on ubuntu 
