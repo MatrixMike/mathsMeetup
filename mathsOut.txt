@@ -1,0 +1,30 @@
+16
+Enter a string to test for numeric values
+false
+>>  16
+>>> 64
+16SADX
+ input value is 16qwerty
+
+ boolcount= 2
+=2manip 27 
+=2manip 5 
+=2manip 25 
+=2manip 7 
+
+ input value is 4zz
+
+ boolcount= 1
+=1manip 5 
+=1manip 3 
+
+***
+
+ input value is 64emtra
+
+ boolcount= 2
+=2manip 75 
+=2manip 53 
+=2manip 73 
+=2manip 55 
+>>> 16 * 4 = 64 
