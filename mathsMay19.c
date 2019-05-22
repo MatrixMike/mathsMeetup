@@ -18,9 +18,10 @@ main ()
   bool dig = false;
   int boolcount = 0;
   char stest[] = "16vv";	// line one
-  char lineOne[] = "16qwerty";
-  char lineTwo[] = "4zz";
-  char lineThree[] = "64e1tra";
+
+  char lineOne[] = "17qwerty";	// was 16
+  char lineTwo[] = "5zz";	// was 4 
+  char lineThree[] = "64emtra";	// inserting a digit in the sea of non digits m1t test
   printf ("%d\n", atoi (stest));
   printf ("Enter a string to test for numeric values\n");
 //  gets(s);  // better use fgets
@@ -42,28 +43,53 @@ main ()
   oneOff (lineOne);
   oneOff (lineTwo);
   oneOff (lineThree);
-  printf ("\nboolcount = %d\n", boolcount);
-  printf ("%s\n", dig ? "true" : "false");
+  printf (">>> %d * %d = %d \n", atoi (lineOne), atoi (lineTwo), atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
+//  printf ("\nboolcount = %d\n", boolcount);
+//  printf ("%s\n", dig ? "true" : "false");
 }
 
 int
 oneOff (char *s)
 {
-  /*
-     int i = 0;
-     int boolcount = 0;
-     bool dig = false;
-     while (s[i])                 // a sort of trick - looking at non-zero characters
-     {
-     if (isdigit (s[i]) != 0)
-     {
-     boolcount++;
-     dig = true;
 
-     }
-     printf ("\n boolcount= %d\n", boolcount);
-     }
-   */
+  int i = 0;
+  int boolcount = 0;
+  bool dig = false;
+  printf ("\n input value is %s\n", s);
+  while (s[i])			// a sort of trick - looking at non-zero characters
+    {
+      if (isdigit (s[i]) != 0)
+	{
+	  boolcount++;
+	  dig = true;
+	}
+      i++;
+      //     printf ("\n boolcount= %d\n", boolcount);
+    }
+//  printf ("%s\n", dig ? "true" : "false");
+  printf ("\n boolcount= %d\n", boolcount);
+  switch (boolcount)
+    {
+    case 3:
+    case 2:
+      //process numbers with two digits
+      printf ("=2manip %d \n", atoi (s) + 11);
+      printf ("=2manip %d \n", atoi (s) - 11);
+      printf ("=2manip %d \n", atoi (s) + 9);
+      printf ("=2manip %d \n", atoi (s) - 9);
+      return boolcount;
+    case 1:
+      //process numbers with one digit
+      printf ("=1manip %d \n", atoi (s) + 1);
+      printf ("=1manip %d \n", atoi (s) - 1);
+      printf ("\n***\n");
+    default:
+
+      return boolcount;
+      // return boolcount  could be used by caller
+
+    }
+  printf ("\n got here\n");
   //process numbers with one digit
   printf ("=1manip %d \n", atoi (s) + 1);
   printf ("=1manip %d \n", atoi (s) - 1);
@@ -84,7 +110,8 @@ oneOff (char *s)
 }
 
 
-int
+/* 
+ * int
 check_vowel (char c)
 {
   switch (c)
@@ -104,3 +131,4 @@ check_vowel (char c)
       return 0;
     }
 }
+*/
