@@ -151,7 +151,7 @@ check_vowel (char c)
 }
 */
 
-
+/*
 int
 seqTest ()
 {
@@ -163,3 +163,4 @@ seqTest ()
     }
   return 1;
 }
+*/
