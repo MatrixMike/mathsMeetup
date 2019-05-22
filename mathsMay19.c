@@ -12,20 +12,24 @@ main ()
   int i = 0;
   bool dig = false;
   int boolcount = 0;
-  char stest[] = "1";
+  char stest[] = "1vvv";	// line one
+  char lineTwo[] = "4zz";
   printf ("%d\n", atoi (stest));
   printf ("Enter a string to test for numeric values\n");
 //  gets(s);  // better use fgets
-  char str[] = "165sAd";
+  char str[] = "16sAdx";
   printf ("%s\n", dig ? "true" : "false");
-  while (str[i])
+  while (str[i])		// a sort of trick - looking at non-zero characters
     {
       putchar (toupper (str[i]));
       if (isdigit (str[i]) != 0)
 	{
 	  boolcount++;
 	  dig = true;
-//          printf  ("%d", atoi(str[i]));
+	  printf (">> %d\n", atoi (str));	// seems to stop conversion at non-numeric char
+	  printf (">>> %d\n", atoi (lineTwo) * atoi (str));	// seems to stop conversion at non-numeric char
+	  printf ("manip %d \n", atoi (lineTwo) + 1);
+	  printf ("manip %d \n", atoi (lineTwo) - 1);
 	}
       i++;
     }
