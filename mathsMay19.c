@@ -18,7 +18,7 @@ main ()
   int i = 0;
   bool dig = false;
   int boolcount = 0;
-  char stest[] = "15vv";	// line one
+  char stest[] = "16vv";	// line one
 
   char lineOne[] = "16qwerty";	// was 16
   char lineTwo[] = "4zz";	// was 4 
