@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdbool.h>		//, one can use the more intuitive name bool
 #include <assert.h>
+#include "seqTest.h"
 int check_vowel (char);
 int oneOff (char *s);
 int seqTest ();
@@ -91,7 +92,8 @@ oneOff (char *s)
       //process numbers with three digits
 //      printf ("=3manip %d \n", atoi (s) + 11);  
       // -111,109,-91,89,89,91,109,111
-
+      seqTest();
+      
     case 2:
       //process numbers with two digits
       printf ("=2manip %d \n", atoi (s) + 11);
@@ -154,16 +156,3 @@ check_vowel (char c)
 }
 */
 
-/*
-int
-seqTest ()
-{
-  int seqA[8] = { -111, -109, -91, -89, 89, 91, 109, 111 };
-  int i;
-  for (i = 0; i < 8; i++)
-    {
-      printf ("\n    %d \n", seqA[i] + 123);
-    }
-  return 1;
-}
-*/

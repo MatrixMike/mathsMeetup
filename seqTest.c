@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdbool.h>		//, one can use the more intuitive name bool
 #include <assert.h>
+#include "seqTest.h"
 int check_vowel (char);
 int oneOff (char *s);
 int seqTest ();
