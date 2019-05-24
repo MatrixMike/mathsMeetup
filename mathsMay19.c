@@ -62,7 +62,7 @@ main ()
   assert ((atoi (lineOne) * atoi (lineTwo) == atoi (lineThree))
 	  && "process did not work");
 /* when core dumps occur look in /var/log/apport.log   on ubuntu 
-  Distributor ID:	Ubuntu
+Distributor ID:	Ubuntu
 Description:	Ubuntu 16.04.6 LTS
 Release:	16.04
 Codename:	xenial
